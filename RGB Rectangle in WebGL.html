@@ -39,43 +39,13 @@ function draw() {
     
     // CARA 1 : 2 Triangle
 
-    // let coords = new Float32Array([
-    //     -0.5, 0.5,    // Top-left corner
-    //     -0.5, -0.5,   // Bottom-left corner
-    //     0.5, -0.5,    // Bottom-right corner
-    //     0.5, 0.5,      // Top-right corner
-    //     0.5, -0.5,    // Bottom-right corner
-    //     -0.5, 0.5,    // Top-left corner
-    // ]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, bufferCoords);
-    // gl.bufferData(gl.ARRAY_BUFFER, coords, gl.STREAM_DRAW);
-    // gl.vertexAttribPointer(attributeCoords, 2, gl.FLOAT, false, 0, 0);
-    // gl.enableVertexAttribArray(attributeCoords);
-
-    // let color = new Float32Array([
-    //     0, 0, 1, // blue, Top-left corner
-    //     0, 1, 0, // green, Bottom-left corner
-    //     1, 1, 1, // white, Bottom-right corner
-    //     1, 0, 0, // red, Top-right corner
-    //     1, 1, 1, // white, Bottom-right corner
-    //     0, 0, 1, // blue, Top-left corner
-    // ]);
-
-    // gl.bindBuffer(gl.ARRAY_BUFFER, bufferColor);
-    // gl.bufferData(gl.ARRAY_BUFFER, color, gl.STREAM_DRAW);
-    // gl.vertexAttribPointer(attributeColor, 3, gl.FLOAT, false, 0, 0);
-    // gl.enableVertexAttribArray(attributeColor);
-
-    // gl.drawArrays(gl.TRIANGLES, 0, 6);
-
-
-    // CARA 2 : 1 Triangle Strip
     let coords = new Float32Array([
         -0.5, 0.5,    // Top-left corner
-        0.5, 0.5,       // Top-right corner
         -0.5, -0.5,   // Bottom-left corner
-        0.5, -0.5    // Bottom-right corner
+        0.5, -0.5,    // Bottom-right corner
+        0.5, 0.5,      // Top-right corner
+        0.5, -0.5,    // Bottom-right corner
+        -0.5, 0.5,    // Top-left corner
     ]);
 
     gl.bindBuffer(gl.ARRAY_BUFFER, bufferCoords);
@@ -84,10 +54,12 @@ function draw() {
     gl.enableVertexAttribArray(attributeCoords);
 
     let color = new Float32Array([
-        0, 0, 1,  // Red
-        1, 0, 0,   // Red
-        0, 1, 0,  // Blue
-        1, 1, 1,  // Green
+        0, 0, 1, // blue, Top-left corner
+        0, 1, 0, // green, Bottom-left corner
+        1, 1, 1, // white, Bottom-right corner
+        1, 0, 0, // red, Top-right corner
+        1, 1, 1, // white, Bottom-right corner
+        0, 0, 1, // blue, Top-left corner
     ]);
 
     gl.bindBuffer(gl.ARRAY_BUFFER, bufferColor);
@@ -95,7 +67,35 @@ function draw() {
     gl.vertexAttribPointer(attributeColor, 3, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(attributeColor);
 
-    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); 
+    gl.drawArrays(gl.TRIANGLES, 0, 6);
+
+
+    // // CARA 2 : 1 Triangle Strip
+    // let coords = new Float32Array([
+    //     -0.5, 0.5,    // Top-left corner
+    //     0.5, 0.5,       // Top-right corner
+    //     -0.5, -0.5,   // Bottom-left corner
+    //     0.5, -0.5    // Bottom-right corner
+    // ]);
+
+    // gl.bindBuffer(gl.ARRAY_BUFFER, bufferCoords);
+    // gl.bufferData(gl.ARRAY_BUFFER, coords, gl.STREAM_DRAW);
+    // gl.vertexAttribPointer(attributeCoords, 2, gl.FLOAT, false, 0, 0);
+    // gl.enableVertexAttribArray(attributeCoords);
+
+    // let color = new Float32Array([
+    //     0, 0, 1,  // Red
+    //     1, 0, 0,   // Red
+    //     0, 1, 0,  // Blue
+    //     1, 1, 1,  // Green
+    // ]);
+
+    // gl.bindBuffer(gl.ARRAY_BUFFER, bufferColor);
+    // gl.bufferData(gl.ARRAY_BUFFER, color, gl.STREAM_DRAW);
+    // gl.vertexAttribPointer(attributeColor, 3, gl.FLOAT, false, 0, 0);
+    // gl.enableVertexAttribArray(attributeColor);
+
+    // gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); 
     
 }
 
